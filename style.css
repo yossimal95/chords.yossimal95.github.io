@@ -1,0 +1,61 @@
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nav {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.tabs {
+    display: none;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+}
+
+#words textarea {
+    width: 400px;
+    height: 600px;
+    font-size: 12pt;
+    text-align: right;
+} 
+
+#cordsBoard {
+    text-align: right;
+    direction: rtl;
+    line-height: 250%;
+
+}
+
+.word {
+    margin-top: 200px;
+    position: relative;
+}
+
+.word:hover {
+    background-color: rgb(238, 238, 238);
+    cursor: pointer;
+}
+
+.chordsMenu {
+    position: absolute;
+    z-index: 99999999999999;
+    width: 100px;
+    top: 0px;
+    left: 0px;
+} 
+
+.chordClass:before {
+    content: attr(chord);
+    color: blue;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: -25px;
+} 
+
