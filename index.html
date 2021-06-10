@@ -8,31 +8,35 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="nav">
+    <!-- <div class="nav">
         <button tab="words" onclick="browse('words')">words</button>
         <button tab="chords" onclick="browse('chords')">chords</button>
-    </div>
+    </div> -->
     <div class="tabs" id='words' style="display: block;">
-        words
+        <h2>הכנס מילים ולחץ על המשך:</h2>
         <textarea id="wordsTa"></textarea>
+        <button class="next-btn" onclick="ask()">המשך</button>
     </div>
 
     <div class="tabs" id="chords">
-        chords
+        <h2> סמן מילים והוסף את האקורדים
+            <div class="chordsMenu">
+                <select id="chordsSelect"></select>
+                <button onclick="ok()" disabled>בחר אקורד</button>
+            </div>
+        </h2>
         <div id="cordsBoard"></div>
+        <button class="next-btn" onclick="window.print();">הדפס</button>
     </div>
 
-    <div class="chordsMenu">
-        <select id="chordsSelect">
-            <!-- <option value="am">Am</option>
-            <option value="dm">Dm</option>
-            <option value="e">E</option>
-            <option value="c">C</option>
-            <option value="g">G</option> -->
-        </select>
-        <button onclick="ok()">OK</button>
+    <div class="alert-bg" onclick="this.style.display = 'none'">
+        <div class="alert">
+            <p class="alert-text">האם אתה בטוח שברצונך להמשיך? <br> שים לב - לא ניתן לחזור אחורה!</p>
+            <button class="alert-btn" onclick="browse('chords')">אישור</button>
+        </div>
     </div>
 
-    <script src="new-script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
