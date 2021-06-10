@@ -1,5 +1,3 @@
-// 0 - chords list
-//var chordsList = [];
 var chordsList = 'Am,A,A7,B,Bm,B7,Bb,C,C7,Dm,D,D7,E,Em,E7,F,F7,G,Gm,G7';
 
 const loadChords = () => {
@@ -61,8 +59,9 @@ const choosChorde = (element) => {
     if (element.innerText.trim() == '') {
         element.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
     }
+    document.querySelector("#chords > h2 > div > button").disabled = false;
+    element.style.backgroundColor = 'rgb(238, 238, 238)';
     chosenElement = element;
-
 }
 
 // 7 -
@@ -71,7 +70,15 @@ const ok = () => {
     let chord = select[select.selectedIndex].value;
     chosenElement.classList.add("chordClass"); 
     chosenElement.setAttribute("chord", chord);
+    chosenElement.style.backgroundColor = '#fff';
+    document.querySelector("#chords > h2 > div > button").disabled = true;
 }
+
+const ask = () => {
+    document.querySelector('.alert-bg').style.display = 'block';
+}
+
+
 
 function browse(tabId) {
     let x = document.querySelectorAll('.tabs');
